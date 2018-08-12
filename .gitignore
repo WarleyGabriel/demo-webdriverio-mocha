@@ -1,0 +1,9 @@
+### IntelliJ ###
+.idea/
+
+### Logs ###
+allure-logs/
+error-shots/
+
+### Node ###
+node_modules/
