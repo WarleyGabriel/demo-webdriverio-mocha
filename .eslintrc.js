@@ -1,10 +1,14 @@
-const {baseConfig} = require('@bayon/eslint-config-base');
-
-const config = baseConfig();
+const config = {
+    "extends": "airbnb-base",
+    "parser": "babel-eslint"
+};
 
 config.rules = {
     ...config.rules,
     'prefer-destructuring': 'warn',
+    'class-methods-use-this': 'off',
+    'global-require': 'off',
+    'import/prefer-default-export': 'off',
     'no-magic-numbers': ['error', {
         ignore: [0, 1, 2, 1000],
         ignoreArrayIndexes: true,
@@ -22,14 +26,5 @@ config.env = {
     ...config.env,
     mocha: true,
 };
-
-config.overrides.push({
-    files: [
-        'wdio.conf.js',
-    ],
-    rules: {
-        'global-require': 'off',
-    }
-});
 
 module.exports = config;

@@ -16,21 +16,23 @@
     "tests": "./bin/delete-report.sh & ./node_modules/.bin/wdio wdio.conf.js --host localhost --port 4444 --suite all --baseUrl https://phptravels.org"
   },
   "dependencies": {
+    "babel-core": "^6.11.4",
+    "babel-polyfill": "^6.26.0",
     "eslint-config-airbnb": "^17.0.0",
     "fibers": "^2.0.2",
     "webdriverio": "^4.12.0"
   },
   "devDependencies": {
-    "@bayon/eslint-config-base": "0.2.0",
     "@types/node": "10.3.2",
     "@types/webdriverio": "4.10.2",
     "allure-commandline": "^2.5.0",
-    "babel-core": "^6.11.4",
-    "babel-polyfill": "^6.26.0",
+    "babel-eslint": "^9.0.0",
     "babel-preset-env": "1.7.0",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "eslint": "^5.2.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
     "mocha": "5.2.0",
     "mocha-allure-reporter": "1.4.0",
     "npm-run-all": "^4.1.3",
