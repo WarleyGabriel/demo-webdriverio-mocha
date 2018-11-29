@@ -1,13 +1,13 @@
 {
   "name": "@warley/poc-webdriverio",
   "version": "0.0.1",
-  "description": "Testes de integração",
+  "description": "Integration Tests",
   "repository": {
     "type": "git",
     "url": "git@github.com:WarleyGabriel/poc-webdriverio.git"
   },
   "license": "ISC",
-  "author": "warley-gabriel",
+  "author": "Warley Gabriel da Paixão",
   "main": "index.js",
   "scripts": {
     "check": "eslint \"test/**/*.js\" \"wdio.conf.js\"",
@@ -16,29 +16,29 @@
     "tests": "./bin/delete-report.sh & ./node_modules/.bin/wdio wdio.conf.js --host localhost --port 4444 --suite all --baseUrl https://phptravels.org"
   },
   "dependencies": {
-    "babel-core": "^6.11.4",
+    "babel-core": "^6.18.2",
     "babel-polyfill": "^6.26.0",
-    "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-airbnb": "^17.1.0",
     "fibers": "^2.0.2",
-    "webdriverio": "^4.12.0"
+    "webdriverio": "^4.14.0"
   },
   "devDependencies": {
-    "@types/node": "10.3.2",
-    "@types/webdriverio": "4.10.2",
-    "allure-commandline": "^2.5.0",
+    "@types/node": "10.12.10",
+    "@types/webdriverio": "4.13.0",
+    "allure-commandline": "^2.8.1",
     "babel-eslint": "^9.0.0",
     "babel-preset-env": "1.7.0",
     "babel-register": "^6.26.0",
-    "chai": "^4.1.2",
-    "eslint": "^5.2.0",
+    "chai": "^4.2.0",
+    "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "mocha": "5.2.0",
     "mocha-allure-reporter": "1.4.0",
-    "npm-run-all": "^4.1.3",
-    "wdio-allure-reporter": "^0.6.2",
-    "wdio-firefox-profile-service": "^0.1.1",
-    "wdio-mocha-framework": "^0.5.12",
-    "wdio-spec-reporter": "^0.1.3"
+    "npm-run-all": "^4.1.5",
+    "wdio-allure-reporter": "^0.8.3",
+    "wdio-firefox-profile-service": "^0.1.3",
+    "wdio-mocha-framework": "^0.6.4",
+    "wdio-spec-reporter": "^0.1.5"
   }
 }
