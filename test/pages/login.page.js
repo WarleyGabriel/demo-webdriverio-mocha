@@ -1,4 +1,4 @@
-import { expect } from 'chai';
+import { assert } from 'chai';
 
 class Login {
   open() {
@@ -13,21 +13,22 @@ class Login {
     return $('body #inputPassword');
   }
 
-  get botaoEntrar() {
+  get buttonLogin() {
     return $('body #login');
   }
 
-  get mensagemBemVindo() {
+  get welcomeMessage() {
     return $('h1');
   }
 
-  fazerLogin(usuario) {
-    this.inputEmail.setValue(usuario.login);
-    this.inputPassword.setValue(usuario.senha);
-    this.botaoEntrar.click();
+  doLogin(user) {
+    this.inputEmail.setValue(user.login);
+    this.inputPassword.setValue(user.password);
+    this.buttonLogin.click();
 
-    browser.waitForExist(this.mensagemBemVindo.selector);
-    expect(this.mensagemBemVindo.getText()).to.contain('Welcome Back');
+    browser.waitForExist(this.welcomeMessage.selector);
+    assert.include(this.welcomeMessage.getText(), 'Welcome Back');
+    assert.include(browser.element('.header-lined h1').getText(), user.name);
   }
 }
 

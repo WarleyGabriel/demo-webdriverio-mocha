@@ -1,14 +1,14 @@
 import { login } from '../pages/login.page';
-import { cadastro } from '../pages/cadastro.page';
-import { contexto } from '../data/contexto';
+import { register } from '../pages/register.page';
+import { context } from '../data/context';
 
-describe('Cadastrar contato.', () => {
+describe('Register contact.', () => {
   before(() => {
     login.open();
-    login.fazerLogin(contexto.logins.usuarioPadrao);
+    login.doLogin(context.logins.user);
   });
 
-  it('Exibe contato cadastrado com sucesso', () => {
-    cadastro.cadastrarContato(contexto.contatos.usuarioPF);
+  it('Displays successfully registered contact.', () => {
+    register.registerContact(context.contacts.contact);
   });
 });

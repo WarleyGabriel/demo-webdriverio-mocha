@@ -1,10 +1,10 @@
 {
-  "name": "@warley/poc-webdriverio",
+  "name": "demo-webdriverio",
   "version": "0.0.1",
-  "description": "Integration Tests",
+  "description": "DEMO Integration Tests",
   "repository": {
     "type": "git",
-    "url": "git@github.com:WarleyGabriel/poc-webdriverio.git"
+    "url": "git@github.com:WarleyGabriel/demo-webdriverio.git"
   },
   "license": "ISC",
   "author": "Warley Gabriel da Paixão",
@@ -13,7 +13,7 @@
     "check": "eslint \"test/**/*.js\" \"wdio.conf.js\"",
     "format": "yarn run check -- --fix --quiet",
     "report": "allure generate --clean ./allure-logs/allure-results -o ./allure-logs/allure-report",
-    "tests": "./bin/delete-report.sh & ./node_modules/.bin/wdio wdio.conf.js --host localhost --port 4444 --suite all --baseUrl https://phptravels.org"
+    "tests": "wdio wdio.conf.js --host localhost --port 4444 --suite all --baseUrl https://phptravels.org"
   },
   "dependencies": {
     "babel-core": "^6.18.2",

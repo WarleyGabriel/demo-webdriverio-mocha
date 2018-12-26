@@ -1,7 +1,7 @@
 {
-  "usuarioPadrao": {
-    "nome": "integration",
+  "user": {
+    "name": "integration",
     "login": "it@gmail.com",
-    "senha": "teste123"
+    "password": "teste123"
   }
 }
