@@ -7,6 +7,7 @@ describe('Authentication page.', () => {
   });
 
   it('Displays login message successfully.', () => {
-    login.doLogin(context.logins.user);
+    login.login(context.logins.user);
+    login.checkLoginSuccessfully(context.logins.user);
   });
 });

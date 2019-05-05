@@ -1,6 +1,6 @@
 ## DEMO WebDriverIO
 
-**DEMO WebDriverIO** is a project of integration tests, in this project occurs the registration of a contact in the site [phptravels](https://phptravels.org) <br/>
+**DEMO WebDriverIO** is a project of integration tests. In this project the user send message to customer service on [Automation Practice](http://automationpractice.com). <br/>
 The tests are developed in JS with [WebDriverIO](http://webdriver.io/) <br/>
 
 #### Requirements

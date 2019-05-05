@@ -13,7 +13,7 @@
     "check": "eslint \"test/**/*.js\" \"wdio.conf.js\"",
     "format": "yarn run check -- --fix --quiet",
     "report": "allure generate --clean ./allure-logs/allure-results -o ./allure-logs/allure-report",
-    "tests": "wdio wdio.conf.js --host localhost --port 4444 --suite all --baseUrl https://phptravels.org"
+    "tests": "wdio wdio.conf.js --host localhost --port 4444 --suite all --baseUrl http://automationpractice.com"
   },
   "dependencies": {
     "babel-core": "^6.18.2",

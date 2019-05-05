@@ -5,30 +5,49 @@ class Login {
     browser.url('/');
   }
 
+  get buttonLogin() {
+    return $('.login');
+  }
+
   get inputEmail() {
-    return $('body #inputEmail');
+    return $('body #email');
   }
 
   get inputPassword() {
-    return $('body #inputPassword');
+    return $('body #passwd');
   }
 
-  get buttonLogin() {
-    return $('body #login');
+  get buttonSignIn() {
+    return $('body #SubmitLogin');
+  }
+
+  get userLoggedIn() {
+    return $('.account');
   }
 
   get welcomeMessage() {
-    return $('h1');
+    return $('.info-account');
   }
 
-  doLogin(user) {
+  login(user) {
+    this.buttonLogin.click();
+    browser.waitForEnabled(this.inputEmail.selector);
     this.inputEmail.setValue(user.login);
     this.inputPassword.setValue(user.password);
-    this.buttonLogin.click();
+    this.buttonSignIn.click();
+  }
 
+  checkLoginSuccessfully(user) {
     browser.waitForExist(this.welcomeMessage.selector);
-    assert.include(this.welcomeMessage.getText(), 'Welcome Back');
-    assert.include(browser.element('.header-lined h1').getText(), user.name);
+    assert.equal(
+      this.welcomeMessage.getText(),
+      'Welcome to your account. Here you can manage all of your personal information and orders.',
+    );
+
+    assert.equal(
+      this.userLoggedIn.getText(),
+      user.name,
+    );
   }
 }
 

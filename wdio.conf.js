@@ -2,7 +2,7 @@ exports.config = {
   path: '/wd/hub',
   suites: {
     all: [
-      './test/specs/*.js',
+      './test/specs/*.spec.js',
     ],
   },
   maxInstances: 1,
