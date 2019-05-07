@@ -1,5 +1,4 @@
 import { assert } from 'chai';
-import path from 'path';
 
 class Contact {
   get contactLink() {
@@ -26,10 +25,6 @@ class Contact {
     return $('.alert.alert-success');
   }
 
-  get inputFile() {
-    return $('body #fileUpload');
-  }
-
   sendMessage(content) {
     this.contactLink.click();
     assert.equal(
@@ -37,15 +32,7 @@ class Contact {
       'CUSTOMER SERVICE - CONTACT US',
     );
 
-    if (content.file != null) {
-      const filePath = `${path.resolve('./')}/documents/`;
-      browser.chooseFile(
-        this.inputFile.selector,
-        `${filePath}${content.file}`,
-      );
-    }
-
-    this.subjectContact.selectByValue(content.subject);
+    this.subjectContact.selectByAttribute('value', content.subject);
     this.message.setValue(content.message);
 
     this.buttonSubmitMessage.click();

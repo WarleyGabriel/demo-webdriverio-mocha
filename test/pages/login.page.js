@@ -31,14 +31,14 @@ class Login {
 
   login(user) {
     this.buttonLogin.click();
-    browser.waitForEnabled(this.inputEmail.selector);
+    this.inputEmail.waitForEnabled();
     this.inputEmail.setValue(user.login);
     this.inputPassword.setValue(user.password);
     this.buttonSignIn.click();
   }
 
   checkLoginSuccessfully(user) {
-    browser.waitForExist(this.welcomeMessage.selector);
+    this.welcomeMessage.waitForExist();
     assert.equal(
       this.welcomeMessage.getText(),
       'Welcome to your account. Here you can manage all of your personal information and orders.',

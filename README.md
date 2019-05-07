@@ -16,7 +16,7 @@ Install the dependencies
 yarn install
 ```
 
-In package.json file configure the host of the Selenium Server `--host` <br/>
+In wdio.conf.js file configure the host of the Selenium Server `hostname` <br/>
 
 Run tests
 ```

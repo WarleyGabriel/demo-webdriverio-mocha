@@ -1,10 +1,11 @@
 exports.config = {
+  runner: 'local',
+  hostname: 'localhost',
+  port: 4444,
   path: '/wd/hub',
-  suites: {
-    all: [
-      './test/specs/*.spec.js',
-    ],
-  },
+  specs: [
+    './test/specs/**/*.spec.js',
+  ],
   maxInstances: 1,
   capabilities: [{
     maxInstances: 1,
@@ -13,38 +14,21 @@ exports.config = {
     'zal:name': 'DEMO INTEGRATION TESTS',
     'zal:build': 'WebDriverIO',
   }],
-  sync: true,
-  logLevel: 'verbose',
-  coloredLogs: true,
-  deprecationWarnings: true,
+  logLevel: 'trace',
   bail: 0,
-  screenshotPath: './error-shots',
-  waitforTimeout: 20000,
+  baseUrl: 'http://automationpractice.com',
+  waitforTimeout: 10000,
   connectionRetryTimeout: 90000,
   connectionRetryCount: 3,
   framework: 'mocha',
-  reporters: ['spec', 'dot', 'allure'],
-  reporterOptions: {
-    allure: {
-      outputDir: './allure-logs/allure-results',
-    },
-  },
+  reporters: ['dot', 'spec', 'allure'],
   mochaOpts: {
-    compilers: [
-      require('babel-core/register')({
-        only: [
-          /test/,
-        ],
-        babelrc: false,
-        presets: ['env'],
-      }),
-    ],
     ui: 'bdd',
+    compilers: ['js:@babel/register'],
     timeout: 60000,
-    reporter: 'wdio-allure-reporter',
   },
   before() {
-    require('babel-polyfill');
-    browser.windowHandleFullscreen();
+    require('@babel/polyfill');
+    browser.maximizeWindow();
   },
 };

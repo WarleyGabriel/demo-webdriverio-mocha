@@ -2,8 +2,12 @@
 .idea/
 
 ### Logs ###
-allure-logs/
 error-shots/
+allure-results/
+allure-report/
 
 ### Node ###
 node_modules/
+
+### MACOS ###
+.DS_Store

@@ -12,7 +12,6 @@ describe('Send message to customer service.', () => {
     const content = {
       subject: 2,
       message: 'My first test.',
-      file: 'test.pdf',
     };
 
     contact.sendMessage(content);
