@@ -1,7 +1,6 @@
 import { assert } from 'chai';
 import path from 'path';
-
-const fs = require('fs');
+import fs from 'fs';
 
 class Contact {
   get contactLink() {
