@@ -1,4 +1,7 @@
 import { assert } from 'chai';
+import path from 'path';
+
+const fs = require('fs');
 
 class Contact {
   get contactLink() {
@@ -25,12 +28,22 @@ class Contact {
     return $('.alert.alert-success');
   }
 
+  get inputFile() {
+    return $('body #fileUpload');
+  }
+
   sendMessage(content) {
     this.contactLink.click();
     assert.equal(
       this.heading.getText(),
       'CUSTOMER SERVICE - CONTACT US',
     );
+
+    if (content.file != null) {
+      const localFilePath = fs.readFileSync(`${path.resolve('./')}/documents/${content.file}`);
+      const remoteFilePath = browser.uploadFile(Buffer.from(localFilePath).toString('base64'));
+      this.inputFile.setValue(remoteFilePath);
+    }
 
     this.subjectContact.selectByAttribute('value', content.subject);
     this.message.setValue(content.message);
