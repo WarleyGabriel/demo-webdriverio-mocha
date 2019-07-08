@@ -1,10 +1,12 @@
+const { join } = require('path');
+
 exports.config = {
   runner: 'local',
   hostname: 'localhost',
   port: 4444,
   path: '/wd/hub',
   specs: [
-    './test/specs/**/*.spec.js',
+    './test/specs/*.spec.js',
   ],
   maxInstances: 1,
   capabilities: [{
@@ -21,14 +23,29 @@ exports.config = {
   connectionRetryTimeout: 90000,
   connectionRetryCount: 3,
   framework: 'mocha',
-  reporters: ['dot', 'spec', 'allure'],
+  reporters: ['dot', 'spec', ['allure', {
+    outputDir: './allure-results',
+    disableWebdriverStepsReporting: false,
+    disableWebdriverScreenshotsReporting: false,
+  }]],
   mochaOpts: {
     ui: 'bdd',
     compilers: ['js:@babel/register'],
     timeout: 60000,
   },
+  services: [
+    ['image-comparison',
+      {
+        baselineFolder: join(process.cwd(), './screenshots/reference/'),
+        formatImageName: '{tag}-{logName}-{width}x{height}',
+        screenshotPath: join(process.cwd(), './screenshots/'),
+        savePerInstance: true,
+        autoSaveBaseline: true,
+        blockOutStatusBar: true,
+        blockOutToolBar: true,
+      }],
+  ],
   before() {
-    require('@babel/polyfill');
     browser.maximizeWindow();
   },
 };

@@ -18,9 +18,14 @@ yarn install
 
 In wdio.conf.js file configure the host of the Selenium Server `hostname` <br/>
 
-Run tests
+Run e2e tests
 ```
-yarn run tests
+yarn run e2e:tests
+```
+
+Run visual regression tests
+```
+yarn run visual:regression:tests
 ```
 
 #### Allure Reports

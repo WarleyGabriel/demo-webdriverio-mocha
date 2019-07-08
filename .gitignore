@@ -11,3 +11,6 @@ node_modules/
 
 ### MACOS ###
 .DS_Store
+
+## Visual Regression ##
+screenshots/actual

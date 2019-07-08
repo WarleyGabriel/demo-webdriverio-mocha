@@ -8,6 +8,7 @@ config.rules = {
     'prefer-destructuring': 'warn',
     'class-methods-use-this': 'off',
     'global-require': 'off',
+    'func-names': 'off',
     'import/prefer-default-export': 'off',
     'no-magic-numbers': ['error', {
         ignore: [0, 1, 2, 1000],
