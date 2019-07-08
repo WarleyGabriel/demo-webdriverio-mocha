@@ -11,19 +11,19 @@ The tests are developed in JS with [WebDriverIO](http://webdriver.io/) <br/>
 
 #### Getting Started
 
-Install the dependencies
+Install the dependencies;
 ```
 yarn install
 ```
 
 In wdio.conf.js file configure the host of the Selenium Server `hostname` <br/>
 
-Run e2e tests
+Run e2e tests;
 ```
 yarn run e2e:tests
 ```
 
-Run visual regression tests
+Run visual regression tests;
 ```
 yarn run visual:regression:tests
 ```
@@ -32,19 +32,24 @@ yarn run visual:regression:tests
 
 ![alt text](https://github.com/WarleyGabriel/poc-webdriverio/blob/master/image/allure-report.png)
 
-Run report
+Run report;
 ```
 yarn run report
 ```
 
+If you have allure command line in your machine, you can run this command to open the report;
+```
+allure open allure-report
+```
+
 #### Eslint
 
-Run check lint
+Run check lint;
 ```
 yarn run check
 ```
 
-Run format lint
+Run format lint;
 ```
 yarn run format
 ```
