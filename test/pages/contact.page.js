@@ -1,6 +1,5 @@
 import { assert } from 'chai';
 import path from 'path';
-import fs from 'fs';
 
 class Contact {
   get contactLink() {
@@ -39,8 +38,8 @@ class Contact {
     );
 
     if (content.file != null) {
-      const localFilePath = fs.readFileSync(`${path.resolve('./')}/documents/${content.file}`);
-      const remoteFilePath = browser.uploadFile(Buffer.from(localFilePath).toString('base64'));
+      const localFilePath = `${path.resolve('./')}/documents/${content.file}`;
+      const remoteFilePath = browser.uploadFile(localFilePath);
       this.inputFile.setValue(remoteFilePath);
     }
 
