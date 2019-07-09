@@ -1,7 +1,7 @@
-## DEMO WebDriverIO
+## DEMO WebDriverIO with Mocha
 
 **DEMO WebDriverIO** is a project of integration tests. In this project the user send message to customer service on [Automation Practice](http://automationpractice.com). <br/>
-The tests are developed in JS with [WebDriverIO](http://webdriver.io/) <br/>
+The tests are developed in JS with [WebDriverIO](http://webdriver.io/) and [Mocha](https://mochajs.org/)<br/>
 
 #### Requirements
 
@@ -11,47 +11,47 @@ The tests are developed in JS with [WebDriverIO](http://webdriver.io/) <br/>
 
 #### Getting Started
 
-Install the dependencies;
+Install the dependencies:
 ```
 yarn install
 ```
 
 In wdio.conf.js file configure the host of the Selenium Server `hostname` <br/>
 
-Run e2e tests;
+Run e2e tests:
 ```
 yarn run e2e:tests
 ```
 
-Run visual regression tests;
+Run visual regression tests:
 ```
 yarn run visual:regression:tests
 ```
 
 #### Allure Reports
 
-![alt text](https://github.com/WarleyGabriel/poc-webdriverio/blob/master/image/allure-report.png)
+![alt text](https://github.com/WarleyGabriel/demo-webdriverio-mocha/blob/master/images/allure-report.png)
 
 If you don't have allure command line installed on your machine yet, follow the instructions [here](https://github.com/allure-framework/allure-docs/blob/master/docs/reporting/commandline.adoc).
 
-Run report;
+Run report:
 ```
 yarn run report
 ```
 
-If you have allure command line in your machine, you can run this command to open the report;
+If you have allure command line in your machine, you can run this command to open the report:
 ```
 allure open allure-report
 ```
 
 #### Eslint
 
-Run check lint;
+Run check lint:
 ```
 yarn run check
 ```
 
-Run format lint;
+Run format lint:
 ```
 yarn run format
 ```
