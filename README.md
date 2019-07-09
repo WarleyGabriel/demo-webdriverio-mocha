@@ -32,6 +32,8 @@ yarn run visual:regression:tests
 
 ![alt text](https://github.com/WarleyGabriel/poc-webdriverio/blob/master/image/allure-report.png)
 
+If you don't have allure command line installed on your machine yet, follow the instructions [here](https://github.com/allure-framework/allure-docs/blob/master/docs/reporting/commandline.adoc).
+
 Run report;
 ```
 yarn run report
