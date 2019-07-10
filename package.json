@@ -1,7 +1,7 @@
 {
   "name": "demo-webdriverio-mocha",
   "version": "0.0.1",
-  "description": "DEMO Integration Tests with WebdriverIO and Mocha",
+  "description": "Demo Integration Tests with WebdriverIO and Mocha",
   "repository": {
     "type": "git",
     "url": "git@github.com:WarleyGabriel/demo-webdriverio-mocha.git"

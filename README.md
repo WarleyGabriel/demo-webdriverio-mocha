@@ -1,13 +1,13 @@
-## DEMO WebDriverIO with Mocha
+## Demo WebDriverIO with Mocha
 
-**DEMO WebDriverIO** is a project of integration tests. In this project the user send message to customer service on [Automation Practice](http://automationpractice.com). <br/>
-The tests are developed in JS with [WebDriverIO](http://webdriver.io/) and [Mocha](https://mochajs.org/)<br/>
+**Demo WebDriverIO** is a demonstration project of integration tests. In this project the user sends a message to the customer service on [Automation Practice](http://automationpractice.com). <br/>
+These tests are developed in JS with [WebDriverIO](http://webdriver.io/) and [Mocha](https://mochajs.org/)<br/>
 
 #### Requirements
 
-- node >= 8.9.x
-- yarn >= 1.9.x
-- Selenium Server: Here's how to set up a server: [Grid Selenium](https://github.com/zalando/zalenium)
+- node >= 10.15.x - [how to install Node](https://nodejs.org/en/download/)
+- yarn >= 1.16.x - [how to install Yarn](https://yarnpkg.com/en/docs/install#debian-stable)
+- Selenium Server: Here's how to set up a server: [Zalenium](https://github.com/zalando/zalenium) or [Selenium HQ](https://github.com/SeleniumHQ/docker-selenium)
 
 #### Getting Started
 

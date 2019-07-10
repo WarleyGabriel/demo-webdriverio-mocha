@@ -13,7 +13,7 @@ exports.config = {
     maxInstances: 1,
     browserName: 'chrome',
     'zal:recordVideo': true,
-    'zal:name': 'DEMO INTEGRATION TESTS',
+    'zal:name': 'Demo Integration Tests',
     'zal:build': 'WebDriverIO',
   }],
   logLevel: 'trace',
