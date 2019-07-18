@@ -6,7 +6,7 @@ module.exports = {
         'func-names': 'off',
         'import/prefer-default-export': 'off',
         'no-magic-numbers': ['error', {
-            ignore: [0, 1, 2, 1000],
+            ignore: [1080, 1920],
             ignoreArrayIndexes: true,
             enforceConst: true,
         }],
@@ -21,5 +21,6 @@ module.exports = {
     },
     extends: [
         'airbnb-base',
+        'prettier',
     ]
 };

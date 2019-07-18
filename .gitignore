@@ -3,8 +3,7 @@
 
 ### Logs ###
 error-shots/
-allure-results/
-allure-report/
+test-report/
 
 ### Node ###
 node_modules/
