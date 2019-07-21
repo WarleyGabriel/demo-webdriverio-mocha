@@ -1,19 +1,17 @@
-import { assert } from 'chai';
-import { login } from '../pages/Login.page';
-import { contact } from '../pages/Contact.page';
+import { loginPage } from '../pages/Login.page';
+import { contactPage } from '../pages/Contact.page';
+import { contactValidation } from '../validations/Contact.validation';
 import { context } from '../../data/Context';
-import * as systemMessages from '../constants/SystemMessages.constant';
-import * as systemLabels from '../constants/SystemLabels.constant';
 
 describe('Send message to customer service.', () => {
     before(() => {
-        login.open();
-        login.login(context.logins.user);
+        loginPage.open();
+        loginPage.login(context.logins.user);
     });
 
     it('Displays a message in heading page.', () => {
-        contact.goToContactPage();
-        assert.equal(contact.heading.getText(), systemLabels.CUSTOMER_SERVICE);
+        contactPage.goToContactPage();
+        contactValidation.checkLabelCustomerService();
     });
 
     it('Displays successfully after user sends message to customer service.', () => {
@@ -22,12 +20,7 @@ describe('Send message to customer service.', () => {
             message: 'My first test.',
             file: 'test.pdf',
         };
-
-        contact.sendMessage(content);
-
-        assert.equal(
-            contact.successMessage.getText(),
-            systemMessages.FEEDBACK_MESSAGE_SENT,
-        );
+        contactPage.sendMessage(content);
+        contactValidation.checkFeedbackMessageSent();
     });
 });

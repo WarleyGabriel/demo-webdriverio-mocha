@@ -1,23 +1,18 @@
-import { assert } from 'chai';
-import { login } from '../pages/Login.page';
+import { loginPage } from '../pages/Login.page';
+import { loginValidation } from '../validations/Login.validation';
 import { context } from '../../data/Context';
-import * as systemMessages from '../constants/SystemMessages.constant';
 
 describe('Authentication page.', () => {
     before(() => {
-        login.open();
+        loginPage.open();
     });
 
     it('Displays login message successfully.', () => {
-        login.login(context.logins.user);
-
-        assert.equal(
-            login.welcomeMessage.getText(),
-            systemMessages.FEEDBACK_USER_LOGGED,
-        );
+        loginPage.login(context.logins.user);
+        loginValidation.checkUserLoggedMessage();
     });
 
     it('Displays user name on the page.', () => {
-        assert.equal(login.userLoggedIn.getText(), context.logins.user.name);
+        loginValidation.checkUserName(context.logins.user.name);
     });
 });

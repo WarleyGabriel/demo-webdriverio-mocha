@@ -1,4 +1,4 @@
-class Home {
+class HomePage {
     get logoSite() {
         return $('img.logo.img-responsive');
     }
@@ -8,4 +8,4 @@ class Home {
     }
 }
 
-export const home = new Home();
+export const homePage = new HomePage();

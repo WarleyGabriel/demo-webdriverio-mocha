@@ -1,6 +1,6 @@
 import path from 'path';
 
-class Contact {
+class ContactPage {
     get contactLink() {
         return $('body #contact-link');
     }
@@ -50,4 +50,4 @@ class Contact {
     }
 }
 
-export const contact = new Contact();
+export const contactPage = new ContactPage();
