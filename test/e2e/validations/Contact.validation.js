@@ -5,7 +5,10 @@ import * as systemLabels from '../constants/SystemLabels.constant';
 
 class ContactValidation {
     checkLabelCustomerService() {
-        assert.equal(contactPage.heading.getText(), systemLabels.CUSTOMER_SERVICE);
+        assert.equal(
+            contactPage.heading.getText(),
+            systemLabels.CUSTOMER_SERVICE,
+        );
     }
 
     checkFeedbackMessageSent() {
