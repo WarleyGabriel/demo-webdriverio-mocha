@@ -5,11 +5,14 @@ module.exports = {
         'global-require': 'off',
         'func-names': 'off',
         'import/prefer-default-export': 'off',
-        'no-magic-numbers': ['error', {
-            ignore: [1080, 1920],
-            ignoreArrayIndexes: true,
-            enforceConst: true,
-        }],
+        'no-magic-numbers': [
+            'error',
+            {
+                ignore: [0, 1080, 1920],
+                ignoreArrayIndexes: true,
+                enforceConst: true,
+            },
+        ],
     },
     globals: {
         browser: true,
@@ -19,8 +22,5 @@ module.exports = {
     env: {
         mocha: true,
     },
-    extends: [
-        'airbnb-base',
-        'prettier',
-    ]
+    extends: ['airbnb-base', 'prettier'],
 };
