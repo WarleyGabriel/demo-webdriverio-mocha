@@ -10,13 +10,15 @@
   "author": "Warley Gabriel da Paixão",
   "main": "index.js",
   "scripts": {
-    "check": "yarn run lint && yarn run prettier",
-    "e2e:tests": "wdio wdio.conf.js",
-    "format": "yarn run lint --fix --quiet && yarn run prettier --write",
-    "lint": "eslint .",
-    "prettier": "prettier --check \"**/*.js*\"",
-    "report": "allure generate --clean ./test-report/allure-result/ -o ./test-report/allure-report",
-    "visual:regression:tests": "wdio wdio.conf.js --spec test/visualRegression/*.spec.js"
+    "code:check": "yarn code:lint && yarn code:prettier",
+    "code:format": "yarn code:lint --fix --quiet && yarn code:prettier --write",
+    "code:lint": "eslint .",
+    "code:prettier": "prettier --check \"**/*.js*\"",
+    "report:allure": "./node_modules/allure-commandline/bin/allure",
+    "report:generate": "yarn report:allure generate --clean ./test-report/allure-result/ -o ./test-report/allure-report",
+    "report:open": "yarn report:allure open test-report/allure-report",
+    "tests:e2e": "wdio wdio.conf.js",
+    "tests:visualregression": "wdio wdio.conf.js --spec test/visualRegression/*.spec.js"
   },
   "dependencies": {
     "@babel/cli": "^7.5.0",
@@ -33,6 +35,7 @@
     "@wdio/selenium-standalone-service": "^5.11.2",
     "@wdio/spec-reporter": "^5.11.0",
     "@wdio/sync": "^5.11.0",
+    "allure-commandline": "^2.9.0",
     "chai": "^4.2.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.1",
