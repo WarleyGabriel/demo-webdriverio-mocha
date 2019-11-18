@@ -26,6 +26,8 @@
     "@babel/polyfill": "^7.7.0",
     "@babel/preset-env": "^7.7.1",
     "@babel/register": "^7.7.0",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
     "@types/node": "^12.12.8",
     "@wdio/allure-reporter": "^5.16.0",
     "@wdio/cli": "^5.16.7",
@@ -37,6 +39,7 @@
     "@wdio/sync": "^5.16.5",
     "allure-commandline": "^2.13.0",
     "chai": "^4.2.0",
+    "cz-conventional-changelog": "^3.0.2",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-airbnb-base": "^14.0.0",
@@ -49,5 +52,10 @@
     "wdio-image-comparison-service": "^1.8.0",
     "wdio-timeline-reporter": "^5.1.1",
     "webdriverio": "^5.16.7"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
