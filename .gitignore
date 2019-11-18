@@ -12,6 +12,7 @@ node_modules/
 
 ## Visual Regression ##
 screenshots/actual
+screenshots/diff
 
 ### Zalenium ###
 videos/
