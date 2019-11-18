@@ -77,3 +77,5 @@ Run format lint:
 ```bash
 yarn code:format
 ```
+
+Follow this [article](https://medium.com/@klauskpm/how-to-create-good-commit-messages-67943d30cced) to contribute and create a good commit message.
