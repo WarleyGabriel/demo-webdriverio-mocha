@@ -7,14 +7,14 @@ describe('Visual regression tests on the home page.', () => {
         loginPage.open();
     });
 
-    it('Displays logo on the home page.', function() {
+    it('Displays logo on the home page.', function () {
         assert.equal(
             browser.checkElement(homePage.logoSite, this.test.title),
             0,
         );
     });
 
-    it('Displays empty cart on the home page.', function() {
+    it('Displays empty cart on the home page.', function () {
         assert.equal(browser.checkElement(homePage.cart, this.test.title), 0);
     });
 });
