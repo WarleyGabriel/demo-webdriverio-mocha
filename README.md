@@ -1,81 +1,74 @@
-Demo WebDriverIO with Mocha
-=================
+# E2E tests with WebDriverIO and Mocha
 
-**Demo WebDriverIO** is a demonstration project of integration tests. In this project the user sends a message to the customer service on [Automation Practice](http://automationpractice.com).  
-These tests are developed in JS with [WebDriverIO](http://webdriver.io/) and [Mocha](https://mochajs.org/)  
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Action Status](https://github.com/WarleyGabriel/demo-webdriverio-mocha/workflows/CI/badge.svg)](https://github.com/WarleyGabriel/demo-webdriverio-mocha/actions)
 
-Requirements
----------------
+This is a demonstration project of integration tests. In this project the user sends a message to the customer service on [Automation Practice](http://automationpractice.com).  
+These tests are developed in TypeScript with [WebDriverIO V6](http://webdriver.io/) and [Mocha](https://mochajs.org/)
 
-- node >= 10.15.x - [how to install Node](https://nodejs.org/en/download/)
-- yarn >= 1.16.x - [how to install Yarn](https://yarnpkg.com/en/docs/install#debian-stable)
-- Selenium Server: Here's how to set up a server: [Zalenium](https://github.com/zalando/zalenium) or [Selenium HQ](https://github.com/SeleniumHQ/docker-selenium)
+## Features
 
-Getting Started
----------------
+-   TypeScript
+-   [Expect-webdriverio](https://github.com/webdriverio/expect-webdriverio)
+-   Page Object Pattern
+-   [Commit lint](https://github.com/conventional-changelog/commitlint) and [Commitizen](https://github.com/commitizen/cz-cli#making-your-repo-commitizen-friendly)
+-   ESlint
+-   Prettier
+-   Husky
+-   Github Actions example
+-   Allure report (screenshots on failure)
+
+## Requirements
+
+-   node >= 12.18.x - [how to install Node](https://nodejs.org/en/download/)
+-   npm >= 6.14.x - [how to install NPM](https://www.npmjs.com/get-npm)
+
+## Getting Started
 
 Install the dependencies:
 
 ```bash
-yarn install
+npm install
 ```
 
-Start a Selenium Server with Zalenium:
+Compile TypeScript:
 
 ```bash
-docker-compose up -d zalenium
+npm run build
 ```
-
-In wdio.conf.js file configure the host of the Selenium Server `hostname` (default: localhost).  
-
-If you don't want to start a Selenium Server, you can use Selenium Standalone from wdio (if you have JDK installed).  
-So, you should uncomment the line 60 on `wdio.conf.js`.  
-Then the tests run on your machine without a docker selenium.
 
 Run e2e tests:
 
 ```bash
-yarn tests:e2e
+npm run tests:e2e
 ```
 
-Run visual regression tests:
+## Reports
 
-```bash
-yarn tests:visualregression
-```
-
-Reports
----------------
-
-![alt text](https://github.com/WarleyGabriel/demo-webdriverio-mocha/blob/master/images/allure-report.png)
+### Allure
 
 Run this command to generate the allure report in the directory `./test-report/allure-report`:
 
 ```bash
-yarn report:generate
+npm run report:generate
 ```
 
 You can run this command to start a server on your machine and open the allure report on the browser:
 
 ```bash
-yarn report:open
+npm run report:open
 ```
 
-Also, you can see [Timeline report](https://github.com/QualityOps/wdio-timeline-reporter) in `./test-report/timeline`
+## Prettier and Eslint
 
-Eslint and Prettier
----------------
-
-Run check lint:
+Run to format the code:
 
 ```bash
-yarn code:check
+npm run code:format
 ```
 
-Run format lint:
+## Commit
 
-```bash
-yarn code:format
-```
+We use the best practices for message's commit, using [Commit lint](https://github.com/conventional-changelog/commitlint) and [Commitizen](https://github.com/commitizen/cz-cli#making-your-repo-commitizen-friendly) we can generate changelogs automatically.
 
-Follow this [article](https://medium.com/@klauskpm/how-to-create-good-commit-messages-67943d30cced) to contribute and create a good commit message.
+Run `npm run commit` and commitizen will help you.

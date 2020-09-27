@@ -1,20 +1,16 @@
-const { join } = require('path');
-const { TimelineService } = require('wdio-timeline-reporter/timeline-service');
+import { join } from 'path';
 
 exports.config = {
     runner: 'local',
     hostname: 'localhost',
     port: 4444,
     path: '/wd/hub',
-    specs: ['./test/e2e/specs/*.spec.js'],
+    specs: ['./dist/**/*.spec.js'],
     maxInstances: 1,
     capabilities: [
         {
             maxInstances: 1,
             browserName: 'chrome',
-            'zal:recordVideo': true,
-            'zal:name': 'Demo Integration Tests',
-            'zal:build': 'WebDriverIO',
         },
     ],
     logLevel: 'trace',
@@ -25,24 +21,20 @@ exports.config = {
     connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
     framework: 'mocha',
+    mochaOpts: {
+        timeout: 30000,
+    },
     reporters: [
-        'dot',
         'spec',
         [
             'allure',
             {
                 outputDir: './test-report/allure-result/',
-                disableWebdriverStepsReporting: false,
+                disableWebdriverStepsReporting: true,
                 disableWebdriverScreenshotsReporting: false,
             },
         ],
-        ['timeline', { outputDir: './test-report/timeline' }],
     ],
-    mochaOpts: {
-        ui: 'bdd',
-        compilers: ['js:@babel/register'],
-        timeout: 60000,
-    },
     services: [
         [
             'image-comparison',
@@ -56,11 +48,17 @@ exports.config = {
                 blockOutToolBar: true,
             },
         ],
-        [TimelineService],
-        // Uncomment to run tests with Selenium Standalone, if you have JDK installed.
-        // ['selenium-standalone'],
+        'chromedriver',
     ],
+    beforeSession() {
+        require('expect-webdriverio').setOptions({ wait: 5000 });
+    },
     before() {
-        browser.setWindowSize(1920, 1080);
+        browser.setWindowSize(1280, 720);
+    },
+    afterTest: function (test: any, context: any, { error }: any) {
+        if (error) {
+            browser.takeScreenshot();
+        }
     },
 };

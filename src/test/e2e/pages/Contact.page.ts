@@ -1,5 +1,3 @@
-import path from 'path';
-
 class ContactPage {
     get contactLink() {
         return $('body #contact-link');
@@ -34,13 +32,11 @@ class ContactPage {
         this.heading.waitForExist();
     }
 
-    sendMessage(content) {
-        if (content.file != null) {
-            const localFilePath = `${path.resolve('./')}/documents/${
-                content.file
-            }`;
-            const remoteFilePath = browser.uploadFile(localFilePath);
-            this.inputFile.setValue(remoteFilePath);
+    sendMessage(content: { subject: string; message: string; file: string }) {
+        if (content.file) {
+            this.inputFile.setValue(
+                `${process.cwd()}/files-to-upload/${content.file}`,
+            );
         }
 
         this.subjectContact.selectByAttribute('value', content.subject);
@@ -50,4 +46,4 @@ class ContactPage {
     }
 }
 
-export const contactPage = new ContactPage();
+export default new ContactPage();

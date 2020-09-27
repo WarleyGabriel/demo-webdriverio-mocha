@@ -1,7 +1,4 @@
-.idea/*
-documents/*
-images/*
 node_modules/*
+files-to-upload/*
 test-report/*
-yarn.lock
-videos/*
+dist/*

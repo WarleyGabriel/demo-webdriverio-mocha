@@ -1,6 +1,4 @@
-.idea/*
-documents/*
-images/*
 node_modules/*
+files-to-upload/*
 test-report/*
-videos/*
+dist/*
