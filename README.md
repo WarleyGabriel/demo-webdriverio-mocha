@@ -10,6 +10,7 @@ These tests are developed in TypeScript with [WebDriverIO V6](http://webdriver.i
 
 -   TypeScript
 -   [Expect-webdriverio](https://github.com/webdriverio/expect-webdriverio)
+-   [Visual regression tests](https://github.com/wswebcreation/wdio-image-comparison-service)
 -   Page Object Pattern
 -   [Commit lint](https://github.com/conventional-changelog/commitlint) and [Commitizen](https://github.com/commitizen/cz-cli#making-your-repo-commitizen-friendly)
 -   ESlint
@@ -41,6 +42,12 @@ Run e2e tests:
 
 ```bash
 npm run tests:e2e
+```
+
+Run visual regression tests:
+
+```bash
+npm run tests:visualregression
 ```
 
 ## Reports
