@@ -4,7 +4,7 @@
 [![Action Status](https://github.com/WarleyGabriel/demo-webdriverio-mocha/workflows/CI/badge.svg)](https://github.com/WarleyGabriel/demo-webdriverio-mocha/actions)
 
 This is a demonstration project of integration tests. In this project the user sends a message to the customer service on [Automation Practice](http://automationpractice.com).  
-These tests are developed in TypeScript with [WebDriverIO V6](http://webdriver.io/) and [Mocha](https://mochajs.org/)
+These tests are developed in TypeScript with [WebDriverIO V7](http://webdriver.io/) and [Mocha](https://mochajs.org/)
 
 ## Features
 
@@ -21,7 +21,7 @@ These tests are developed in TypeScript with [WebDriverIO V6](http://webdriver.i
 
 ## Requirements
 
--   node >= 12.18.x - [how to install Node](https://nodejs.org/en/download/)
+-   node >= 14.x.x - [how to install Node](https://nodejs.org/en/download/)
 -   npm >= 6.14.x - [how to install NPM](https://www.npmjs.com/get-npm)
 
 ## Getting Started

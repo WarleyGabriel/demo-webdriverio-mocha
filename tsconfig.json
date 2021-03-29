@@ -2,7 +2,7 @@
   "compilerOptions": {
     "module": "CommonJS",
     "lib": ["es2017"],
-    "target": "es5",
+    "target": "es2019",
     "removeComments": true,
     "noImplicitAny": true,
     "strictPropertyInitialization": true,
@@ -10,7 +10,7 @@
     "skipLibCheck": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "outDir": "dist",
@@ -20,8 +20,9 @@
     },
     "types": [
       "node",
-      "@wdio/sync",
+      "webdriverio/sync",
       "@wdio/mocha-framework",
+      "expect-webdriverio",
       "wdio-image-comparison-service"
     ]
   },

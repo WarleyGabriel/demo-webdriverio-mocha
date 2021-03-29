@@ -50,8 +50,15 @@ exports.config = {
         ],
         'chromedriver',
     ],
-    beforeSession() {
-        require('expect-webdriverio').setOptions({ wait: 5000 });
+    autoCompileOpts: {
+        autoCompile: true,
+        tsNodeOpts: {
+            transpileOnly: true,
+            project: 'tsconfig.json'
+        },
+        tsConfigPathsOpts: {
+            baseUrl: './'
+        }
     },
     before() {
         browser.setWindowSize(1280, 720);
