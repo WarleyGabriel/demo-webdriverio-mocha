@@ -11,6 +11,17 @@ These tests are developed in TypeScript with [WebDriverIO V7](http://webdriver.i
 -   TypeScript
 -   [Expect-webdriverio](https://github.com/webdriverio/expect-webdriverio)
 -   [Visual regression tests](https://github.com/wswebcreation/wdio-image-comparison-service)
+-   [PerformanceTotal Service](https://webdriver.io/docs/wdio-performancetotal-service)
+
+```bash
+┌─────────┬──────────────────────┬─────────────┬─────┬─────────┬──────────┬──────────┐
+│ (index) │         name         │ averageTime │ sem │ repeats │ minValue │ maxValue │
+├─────────┼──────────────────────┼─────────────┼─────┼─────────┼──────────┼──────────┤
+│    0    │    'LoginProcess'    │    4243     │  0  │    1    │   4243   │   4243   │
+│    1    │ 'SendMessageProcess' │    1408     │  0  │    1    │   1408   │   1408   │
+└─────────┴──────────────────────┴─────────────┴─────┴─────────┴──────────┴──────────┘
+```
+
 -   Page Object Pattern
 -   [Commit lint](https://github.com/conventional-changelog/commitlint) and [Commitizen](https://github.com/commitizen/cz-cli#making-your-repo-commitizen-friendly)
 -   ESlint

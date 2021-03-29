@@ -49,16 +49,25 @@ exports.config = {
             },
         ],
         'chromedriver',
+        [
+            'performancetotal',
+            {
+                disableAppendToExistingFile: false,
+                performanceResultsFileName: `performance-results_${new Date().getTime()}`,
+                dropResultsFromFailedTest: false,
+                performanceResultsDirectory: 'test-report/performance-results',
+            },
+        ],
     ],
     autoCompileOpts: {
         autoCompile: true,
         tsNodeOpts: {
             transpileOnly: true,
-            project: 'tsconfig.json'
+            project: 'tsconfig.json',
         },
         tsConfigPathsOpts: {
-            baseUrl: './'
-        }
+            baseUrl: './',
+        },
     },
     before() {
         browser.setWindowSize(1280, 720);

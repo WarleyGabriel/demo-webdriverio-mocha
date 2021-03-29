@@ -31,6 +31,7 @@
     "npm-run-all": "^4.1.5",
     "wdio-chromedriver-service": "^7.0.0",
     "wdio-image-comparison-service": "^2.3.0",
+    "wdio-performancetotal-service": "^1.0.10",
     "webdriverio": "^7.2.3"
   },
   "devDependencies": {

@@ -1,3 +1,4 @@
+import { performancetotal } from 'wdio-performancetotal-service';
 import { SystemMessages } from '../constants/SystemMessages';
 import { SystemLabels } from '../constants/SystemLabels';
 import LoginPage from '../pages/Login.page';
@@ -17,6 +18,8 @@ describe('Send message to customer service.', () => {
     });
 
     it('Displays successfully after user sends message to customer service.', () => {
+        performancetotal.sampleStart('SendMessageProcess');
+
         ContactPage.sendMessage({
             subject: '2',
             message: 'My first test.',
@@ -26,6 +29,8 @@ describe('Send message to customer service.', () => {
         expect(ContactPage.successMessage).toHaveText(
             SystemMessages.FEEDBACK_MESSAGE_SENT,
         );
+
+        performancetotal.sampleEnd('SendMessageProcess');
 
         // This sleep is unnecessary for the test, it's only to see the result (on-screen)
         browser.pause(5000);
