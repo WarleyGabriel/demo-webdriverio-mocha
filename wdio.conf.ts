@@ -48,7 +48,7 @@ exports.config = {
                 blockOutToolBar: true,
             },
         ],
-        'chromedriver',
+        ['chromedriver'],
         [
             'performancetotal',
             {
